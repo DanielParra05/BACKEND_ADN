@@ -23,7 +23,7 @@ public interface RepositorioTiqueteParqueo {
     void eliminar(Long id);
 
     /**
-     * Permite validar si existe un tiquete de parqueo con un nombre
+     * Permite validar si existe un tiquete de parqueo con una placa
      * @param nombre
      * @return si existe o no
      */

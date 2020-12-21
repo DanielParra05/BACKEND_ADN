@@ -14,7 +14,7 @@ public class TiqueteParqueoTestDataBuilder {
 	private LocalDateTime fechaSalida;
 
     public TiqueteParqueoTestDataBuilder() {
-    	placaVehiculo = "KDL100";
+    	placaVehiculo = "GKK550";
     	tipoVehiculo = TipoVehiculo.CARRO;
     	fechaIngreso = LocalDateTime.now();
     }
@@ -30,6 +30,6 @@ public class TiqueteParqueoTestDataBuilder {
     }
 
     public TiqueteParqueo build() {
-        return new TiqueteParqueo(id, placaVehiculo, tipoVehiculo.getValue(), fechaIngreso, fechaSalida);
+        return new TiqueteParqueo(id, placaVehiculo, tipoVehiculo.toString(), fechaIngreso, fechaSalida);
     }
 }

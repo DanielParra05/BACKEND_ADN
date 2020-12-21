@@ -1,3 +1,3 @@
 delete 
-from TiqueteParqueo
+from tiqueteparqueo
 where id = :id

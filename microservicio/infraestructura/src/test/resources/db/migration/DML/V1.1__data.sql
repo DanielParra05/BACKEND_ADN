@@ -1,1 +1,1 @@
-insert into TiqueteParqueo(placa_vehiculo,tipo_vehiculo,fecha_creacion) values('KDL100','Carro',now())
+insert into tiqueteparqueo(placa_vehiculo,tipo_vehiculo,fecha_ingreso) values('KDL100','Carro',now())

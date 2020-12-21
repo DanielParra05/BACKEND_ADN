@@ -1,4 +1,4 @@
-update TiqueteParqueo
+update tiqueteparqueo
 set placa_vehiculo = :placa_vehiculo,
 	tipo_vehiculo = :tipo_vehiculo,
 	fecha_ingreso = :fecha_ingreso,

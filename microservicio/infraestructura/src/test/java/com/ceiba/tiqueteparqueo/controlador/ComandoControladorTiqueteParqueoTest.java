@@ -34,12 +34,12 @@ public class ComandoControladorTiqueteParqueoTest {
     @Test
     public void crear() throws Exception{
         // arrange
-        ComandoTiqueteParqueo TiqueteParqueo = new ComandoTiqueteParqueoTestDataBuilder().build();
+        ComandoTiqueteParqueo tiqueteParqueo = new ComandoTiqueteParqueoTestDataBuilder().build();
 
         // act - assert
         mocMvc.perform(post("/TiqueteParqueos")
                 .contentType(MediaType.APPLICATION_JSON)
-                .content(objectMapper.writeValueAsString(TiqueteParqueo)))
+                .content(objectMapper.writeValueAsString(tiqueteParqueo)))
                 .andExpect(status().isOk())
                 .andExpect(content().json("{'valor': 2}"));
     }
@@ -48,12 +48,12 @@ public class ComandoControladorTiqueteParqueoTest {
     public void actualizar() throws Exception{
         // arrange
         Long id = 2L;
-        ComandoTiqueteParqueo TiqueteParqueo = new ComandoTiqueteParqueoTestDataBuilder().build();
+        ComandoTiqueteParqueo tiqueteParqueo = new ComandoTiqueteParqueoTestDataBuilder().build();
 
         // act - assert
         mocMvc.perform(put("/TiqueteParqueos/{id}",id)
                 .contentType(MediaType.APPLICATION_JSON)
-                .content(objectMapper.writeValueAsString(TiqueteParqueo)))
+                .content(objectMapper.writeValueAsString(tiqueteParqueo)))
                 .andExpect(status().isOk());
     }
 

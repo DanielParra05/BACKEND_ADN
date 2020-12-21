@@ -72,10 +72,10 @@ public class ValidadorArgumento {
         }
     }
 
-    public static <E extends Enum<E>> E validarValido(String valor, Class<E> enumAObtener, String mensaje) {
-        E enumObtenido = null;
+    public static <E extends Enum<E>, T> T validarValido(String valor, T[] listEnumsObtener, String mensaje) {
+        T enumObtenido = null;
         if(null != valor) {
-            Optional<E> resultadoOpcional = Arrays.stream(enumAObtener.getEnumConstants())
+            Optional<T> resultadoOpcional = Arrays.stream(listEnumsObtener)
                     .filter(resultado -> resultado.toString().equals(valor)).findFirst();
 
             if (resultadoOpcional.isPresent()) {

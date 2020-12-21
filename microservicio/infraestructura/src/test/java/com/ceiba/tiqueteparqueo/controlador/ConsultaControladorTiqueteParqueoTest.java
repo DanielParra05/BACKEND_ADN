@@ -28,13 +28,13 @@ public class ConsultaControladorTiqueteParqueoTest {
     @Test
     public void listar() throws Exception {
         // arrange
-
+    	String a = (mocMvc.perform(get("/TiqueteParqueos")).andReturn()).getResponse().getContentAsString();
         // act - assert
         mocMvc.perform(get("/TiqueteParqueos")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(1)))
-                .andExpect(jsonPath("$[0].nombre", is("test")));
+                .andExpect(jsonPath("$[0].placavehiculo", is("KDL100")));
     }
 
 

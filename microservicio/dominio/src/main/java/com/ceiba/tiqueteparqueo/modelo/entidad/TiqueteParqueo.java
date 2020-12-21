@@ -27,7 +27,7 @@ public class TiqueteParqueo {
 			LocalDateTime fechaSalida) {
 		validarObligatorio(placaVehiculo, SE_DEBE_INGRESAR_LA_PLACA);
 		validarObligatorio(fechaIngreso, FECHA_INGRESO_VACIA);
-		validarValido(tipoVehiculo, TipoVehiculo.class, DEBE_INGRESAR_VEHICULO_VALIDO);
+		validarValido(tipoVehiculo, TipoVehiculo.values(), DEBE_INGRESAR_VEHICULO_VALIDO);
 
 		this.id = id;
 		this.tipoVehiculo = TipoVehiculo.valueOf(tipoVehiculo);
