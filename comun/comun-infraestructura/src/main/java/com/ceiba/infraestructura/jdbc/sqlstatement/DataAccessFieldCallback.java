@@ -61,11 +61,11 @@ public class DataAccessFieldCallback implements FieldCallback {
 		}
 		try (InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream(fileName)) {
 			if (inputStream == null) {
-				throw new StatementException("No se encontró el archivo [" + fileName + "]");
+				throw new StatementException("No se encontro el archivo [" + fileName + "]");
 			}			
 			field.set(bean, IOUtils.toString(inputStream, StandardCharsets.UTF_8.name()));
 		} catch (IOException e) {
-			throw new StatementException("No se encontró el archivo [" + fileName + "]");
+			throw new StatementException("No se encontro el archivo [" + fileName + "]");
 		}
 	}
 }

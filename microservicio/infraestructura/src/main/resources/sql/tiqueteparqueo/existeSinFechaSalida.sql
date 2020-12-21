@@ -1,0 +1,1 @@
+select count(1) from TiqueteParqueo where placav_ehiculo = :placaVehiculo and fecha_salida = null

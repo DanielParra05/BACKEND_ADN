@@ -1,0 +1,1 @@
+insert into TiqueteParqueo (placa_vehiculo, tipo_vehiculo, fecha_ingreso) values (:placa_vehiculo, :tipo_vehiculo, :fechaCreacion)

@@ -1,0 +1,1 @@
+select count(1) from TiqueteParqueo where placa_vehiculo = :placa_vehiculo

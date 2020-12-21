@@ -1,1 +1,1 @@
-insert into usuario(nombre,clave,fecha_creacion) values('test','1234',now())
+insert into TiqueteParqueo(placa_vehiculo,tipo_vehiculo,fecha_creacion) values('KDL100','Carro',now())

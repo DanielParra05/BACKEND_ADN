@@ -1,9 +1,9 @@
 package com.ceiba.configuracion;
 
-import com.ceiba.usuario.puerto.repositorio.RepositorioUsuario;
-import com.ceiba.usuario.servicio.ServicioActualizarUsuario;
-import com.ceiba.usuario.servicio.ServicioCrearUsuario;
-import com.ceiba.usuario.servicio.ServicioEliminarUsuario;
+import com.ceiba.tiqueteparqueo.puerto.repositorio.RepositorioTiqueteParqueo;
+import com.ceiba.tiqueteparqueo.servicio.ServicioActualizarTiqueteParqueo;
+import com.ceiba.tiqueteparqueo.servicio.ServicioCrearTiqueteParqueo;
+import com.ceiba.tiqueteparqueo.servicio.ServicioEliminarTiqueteParqueo;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -11,18 +11,18 @@ import org.springframework.context.annotation.Configuration;
 public class BeanServicio {
 
     @Bean
-    public ServicioCrearUsuario servicioCrearUsuario(RepositorioUsuario repositorioUsuario) {
-        return new ServicioCrearUsuario(repositorioUsuario);
+    public ServicioCrearTiqueteParqueo servicioCrearTiqueteParqueo(RepositorioTiqueteParqueo repositorioTiqueteParqueo) {
+        return new ServicioCrearTiqueteParqueo(repositorioTiqueteParqueo);
     }
 
     @Bean
-    public ServicioEliminarUsuario servicioEliminarUsuario(RepositorioUsuario repositorioUsuario) {
-        return new ServicioEliminarUsuario(repositorioUsuario);
+    public ServicioEliminarTiqueteParqueo servicioEliminarTiqueteParqueo(RepositorioTiqueteParqueo repositorioTiqueteParqueo) {
+        return new ServicioEliminarTiqueteParqueo(repositorioTiqueteParqueo);
     }
 
     @Bean
-    public ServicioActualizarUsuario servicioActualizarUsuario(RepositorioUsuario repositorioUsuario) {
-        return new ServicioActualizarUsuario(repositorioUsuario);
+    public ServicioActualizarTiqueteParqueo servicioActualizarTiqueteParqueo(RepositorioTiqueteParqueo repositorioTiqueteParqueo) {
+        return new ServicioActualizarTiqueteParqueo(repositorioTiqueteParqueo);
     }
 	
 

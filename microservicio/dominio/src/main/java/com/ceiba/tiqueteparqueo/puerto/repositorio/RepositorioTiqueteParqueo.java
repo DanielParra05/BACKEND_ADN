@@ -1,0 +1,39 @@
+package com.ceiba.tiqueteparqueo.puerto.repositorio;
+
+import com.ceiba.tiqueteparqueo.modelo.entidad.TiqueteParqueo;
+
+public interface RepositorioTiqueteParqueo {
+    /**
+     * Permite crear un tiquete de parqueo
+     * @param tiqueteParqueo
+     * @return el id generado
+     */
+    Long crear(TiqueteParqueo tiqueteParqueo);
+
+    /**
+     * Permite actualizar un tiquete de parqueo
+     * @param tiqueteParqueo
+     */
+    void actualizar(TiqueteParqueo tiqueteParqueo);
+
+    /**
+     * Permite eliminar un tiquete de parqueo
+     * @param id
+     */
+    void eliminar(Long id);
+
+    /**
+     * Permite validar si existe un tiquete de parqueo con un nombre
+     * @param nombre
+     * @return si existe o no
+     */
+    boolean existe(String placa);
+
+    /**
+     * Permite validar si existe un TiqueteParqueo con determinada placa  y sin fecha de salida
+     * @param placa
+     * @return si existe o no
+     */
+    boolean existeSinFechaSalida(String placa);
+
+}
