@@ -22,7 +22,7 @@ pipeline {
       steps {
         echo "------------>Checkout<------------"
         checkout([
-        $class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], gitTool: 'Default', submoduleCfg: [], userRemoteConfigs: [[
+        $class: 'GitSCM', branches: [[name: '*/refactoring']], doGenerateSubmoduleConfigurations: false, extensions: [], gitTool: 'Default', submoduleCfg: [], userRemoteConfigs: [[
         credentialsId: 'GitHub_danielparra05', url: 'https://github.com/DanielParra05/BACKEND_ADN.git']]])
       }
     }
