@@ -5,8 +5,6 @@ import lombok.Getter;
 
 import java.time.LocalDateTime;
 
-import com.ceiba.tiqueteparqueo.modelo.TipoVehiculo;
-
 @Getter
 @AllArgsConstructor
 public class DtoTiqueteParqueo {
