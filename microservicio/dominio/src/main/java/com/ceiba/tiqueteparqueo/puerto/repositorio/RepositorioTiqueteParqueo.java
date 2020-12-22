@@ -27,13 +27,20 @@ public interface RepositorioTiqueteParqueo {
      * @param nombre
      * @return si existe o no
      */
-    boolean existe(String placa);
+    boolean existePorPlaca(String placa);
+    
+    /**
+     * Permite validar si existe un tiquete de parqueo por su id
+     * @param nombre
+     * @return si existe o no
+     */
+    boolean existePorId(Long id);
 
     /**
      * Permite validar si existe un TiqueteParqueo con determinada placa  y sin fecha de salida
      * @param placa
      * @return si existe o no
      */
-    boolean existeSinFechaSalida(String placa);
+    boolean existePorPlacaAndSinFechaSalida(String placa);
 
 }

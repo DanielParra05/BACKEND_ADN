@@ -29,6 +29,11 @@ public class TiqueteParqueoTestDataBuilder {
         this.id = id;
         return this;
     }
+    
+    public TiqueteParqueoTestDataBuilder conPlaca(String placa) {
+        this.placaVehiculo = placa;
+        return this;
+    }
 
     public TiqueteParqueo build() {
         return new TiqueteParqueo(id, placaVehiculo, tipoVehiculo.toString(), fechaIngreso, fechaSalida, valorAPagar);

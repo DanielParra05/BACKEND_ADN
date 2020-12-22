@@ -1,1 +1,0 @@
-select count(1) from tiqueteparqueo where placa_vehiculo = :placa_vehiculo

@@ -21,8 +21,11 @@ public class RepositorioTiqueteParqueoMysql implements RepositorioTiqueteParqueo
     @SqlStatement(namespace="tiqueteparqueo", value="eliminar")
     private static String sqlEliminar;
 
-    @SqlStatement(namespace="tiqueteparqueo", value="existe")
-    private static String sqlExiste;
+    @SqlStatement(namespace="tiqueteparqueo", value="existePorPlaca")
+    private static String sqlExistePorPlaca;
+    
+    @SqlStatement(namespace="tiqueteparqueo", value="existePorId")
+    private static String sqlExistePorId;
 
     @SqlStatement(namespace="tiqueteparqueo", value="existeSinFechaSalida") 
     private static String sqlExisteSinFechaSalida;
@@ -45,11 +48,11 @@ public class RepositorioTiqueteParqueoMysql implements RepositorioTiqueteParqueo
     }
 
     @Override
-    public boolean existe(String nombre) {
+    public boolean existePorPlaca(String placa) {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
-        paramSource.addValue("nombre", nombre);
+        paramSource.addValue("placaVehiculo", placa);
 
-        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExiste,paramSource, Boolean.class);
+        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExistePorPlaca,paramSource, Boolean.class);
     }
 
     @Override
@@ -58,10 +61,18 @@ public class RepositorioTiqueteParqueoMysql implements RepositorioTiqueteParqueo
     }
 
     @Override
-    public boolean existeSinFechaSalida(String placaVehiculo) {
+    public boolean existePorPlacaAndSinFechaSalida(String placaVehiculo) {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
         paramSource.addValue("placaVehiculo", placaVehiculo);
 
         return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExisteSinFechaSalida,paramSource, Boolean.class);
     }
+
+	@Override
+	public boolean existePorId(Long id) {
+        MapSqlParameterSource paramSource = new MapSqlParameterSource();
+        paramSource.addValue("id", id);
+        
+        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExistePorId,paramSource, Boolean.class);
+	}
 }

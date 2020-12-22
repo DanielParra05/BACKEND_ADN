@@ -21,7 +21,7 @@ public class ServicioCrearTiqueteParqueo {
     }
 
     private void validarExistenciaPrevia(TiqueteParqueo tiqueteParqueo) {
-        boolean existe = this.repositorioTiqueteParqueo.existeSinFechaSalida(tiqueteParqueo.getPlacaVehiculo());
+        boolean existe = this.repositorioTiqueteParqueo.existePorPlacaAndSinFechaSalida(tiqueteParqueo.getPlacaVehiculo());
         if(existe) {
             throw new ExcepcionDuplicidad(EL_TIQUETE_YA_EXISTE_EN_EL_SISTEMA);
         }
