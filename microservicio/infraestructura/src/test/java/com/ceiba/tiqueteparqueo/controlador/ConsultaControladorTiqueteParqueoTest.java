@@ -34,7 +34,7 @@ public class ConsultaControladorTiqueteParqueoTest {
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(1)))
-                .andExpect(jsonPath("$[0].placavehiculo", is("KDL100")));
+                .andExpect(jsonPath("$[0].placaVehiculo", is("KDL100")));
     }
 
 

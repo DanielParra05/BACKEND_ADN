@@ -21,7 +21,7 @@ public class ManejadorCrearTiqueteParqueo implements ManejadorComandoRespuesta<C
     }
 
     public ComandoRespuesta<Long> ejecutar(ComandoTiqueteParqueo comandoTiqueteParqueo) {
-        TiqueteParqueo TiqueteParqueo = this.fabricaTiqueteParqueo.crear(comandoTiqueteParqueo);
-        return new ComandoRespuesta<>(this.servicioCrearTiqueteParqueo.ejecutar(TiqueteParqueo));
+        TiqueteParqueo tiqueteParqueo = this.fabricaTiqueteParqueo.crear(comandoTiqueteParqueo);
+        return new ComandoRespuesta<>(this.servicioCrearTiqueteParqueo.ejecutar(tiqueteParqueo));
     }
 }

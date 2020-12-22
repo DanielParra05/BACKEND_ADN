@@ -76,7 +76,7 @@ public class ValidadorArgumento {
         T enumObtenido = null;
         if(null != valor) {
             Optional<T> resultadoOpcional = Arrays.stream(listEnumsObtener)
-                    .filter(resultado -> resultado.toString().equals(valor)).findFirst();
+                    .filter(resultado -> resultado.toString().equalsIgnoreCase(valor)).findFirst();
 
             if (resultadoOpcional.isPresent()) {
                 enumObtenido = resultadoOpcional.get();

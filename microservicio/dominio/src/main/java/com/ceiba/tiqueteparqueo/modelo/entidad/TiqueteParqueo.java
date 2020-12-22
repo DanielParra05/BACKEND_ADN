@@ -18,21 +18,22 @@ public class TiqueteParqueo {
 
 	private Long id;
 	private String placaVehiculo;
-	private TipoVehiculo tipoVehiculo;
+	private String tipoVehiculo;
 	private LocalDateTime fechaIngreso;
 	private LocalDateTime fechaSalida;
 	private Double valorAPagar;
 
 	public TiqueteParqueo(Long id, String placaVehiculo, String tipoVehiculo, LocalDateTime fechaIngreso,
-			LocalDateTime fechaSalida) {
+			LocalDateTime fechaSalida, Double valorAPagar) {
 		validarObligatorio(placaVehiculo, SE_DEBE_INGRESAR_LA_PLACA);
 		validarObligatorio(fechaIngreso, FECHA_INGRESO_VACIA);
 		validarValido(tipoVehiculo, TipoVehiculo.values(), DEBE_INGRESAR_VEHICULO_VALIDO);
 
 		this.id = id;
-		this.tipoVehiculo = TipoVehiculo.valueOf(tipoVehiculo);
+		this.tipoVehiculo = tipoVehiculo;
 		this.placaVehiculo = placaVehiculo;
 		this.fechaIngreso = fechaIngreso;
 		this.fechaSalida = fechaSalida;
+		this.valorAPagar = valorAPagar;
 	}
 }

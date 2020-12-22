@@ -10,7 +10,7 @@ public class FabricaTiqueteParqueo {
 
 	public TiqueteParqueo crear(ComandoTiqueteParqueo comandoTiqueteParqueo) {
 		return new TiqueteParqueo(comandoTiqueteParqueo.getId(), comandoTiqueteParqueo.getPlacaVehiculo(),
-				comandoTiqueteParqueo.getTipoVehiculo(), comandoTiqueteParqueo.getFechaIngreso(), comandoTiqueteParqueo.getFechaSalida());
+				comandoTiqueteParqueo.getTipoVehiculo(), comandoTiqueteParqueo.getFechaIngreso(), comandoTiqueteParqueo.getFechaSalida(), comandoTiqueteParqueo.getValorAPagar());
 	}
 
 }

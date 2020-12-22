@@ -1,1 +1,1 @@
-insert into tiqueteparqueo (placa_vehiculo, tipo_vehiculo, fecha_ingreso) values (:placa_vehiculo, :tipo_vehiculo, :fecha_ingreso)
+insert into tiqueteparqueo (placa_vehiculo, tipo_vehiculo, fecha_ingreso) values (:placaVehiculo, :tipoVehiculo, :fechaIngreso)
