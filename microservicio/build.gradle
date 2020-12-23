@@ -39,6 +39,8 @@ allprojects {
 	project.ext.flywaytest = ["org.flywaydb.flyway-test-extensions:flyway-spring-test:5.2.1"]
 
 	project.ext.h2 = ["com.h2database:h2:1.4.194"]
+	
+	project.ext.apachehttpcomponents = ["org.apache.httpcomponents:fluent-hc:4.5.13"]	
 }
 
 buildscript {
@@ -74,7 +76,7 @@ dependencies {
 	implementation project.ext.springbootundertow
 	implementation project.ext.flyway
 
-	implementation project(':infraestructura')
+	implementation project(':infraestructura')	
 }
 
 bootJar {
