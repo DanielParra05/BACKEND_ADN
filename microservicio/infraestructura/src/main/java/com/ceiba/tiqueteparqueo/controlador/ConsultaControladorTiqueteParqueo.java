@@ -13,7 +13,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
 @RestController
-@RequestMapping("/TiqueteParqueos")
+@RequestMapping("/tiquetes-parqueo")
 @Api(tags={"Controlador consulta TiqueteParqueo"})
 public class ConsultaControladorTiqueteParqueo {
 

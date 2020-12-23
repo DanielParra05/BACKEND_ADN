@@ -8,7 +8,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import com.ceiba.ApplicationMock;
 import com.ceiba.tiqueteparqueo.comando.ComandoTiqueteParqueo;
-import com.ceiba.tiqueteparqueo.controlador.ComandoControladorTiqueteParqueo;
 import com.ceiba.tiqueteparqueo.servicio.testdatabuilder.ComandoTiqueteParqueoTestDataBuilder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -37,7 +36,7 @@ public class ComandoControladorTiqueteParqueoTest {
         ComandoTiqueteParqueo tiqueteParqueo = new ComandoTiqueteParqueoTestDataBuilder().build();
 
         // act - assert
-        mocMvc.perform(post("/TiqueteParqueos")
+        mocMvc.perform(post("/tiquete-parqueo")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(tiqueteParqueo)))
                 .andExpect(status().isOk())
@@ -51,7 +50,7 @@ public class ComandoControladorTiqueteParqueoTest {
         ComandoTiqueteParqueo tiqueteParqueo = new ComandoTiqueteParqueoTestDataBuilder().build();
 
         // act - assert
-        mocMvc.perform(put("/TiqueteParqueos/{id}",id)
+        mocMvc.perform(put("/tiquete-parqueo/{id}",id)
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(tiqueteParqueo)))
                 .andExpect(status().isOk());
@@ -63,7 +62,7 @@ public class ComandoControladorTiqueteParqueoTest {
         Long id = 2L;
 
         // act - assert
-        mocMvc.perform(delete("/TiqueteParqueos/{id}",id)
+        mocMvc.perform(delete("/tiquete-parqueo/{id}",id)
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());

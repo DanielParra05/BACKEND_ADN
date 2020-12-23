@@ -28,9 +28,9 @@ public class ConsultaControladorTiqueteParqueoTest {
     @Test
     public void listar() throws Exception {
         // arrange
-    	String a = (mocMvc.perform(get("/TiqueteParqueos")).andReturn()).getResponse().getContentAsString();
+    	String a = (mocMvc.perform(get("/tiquetes-parqueo")).andReturn()).getResponse().getContentAsString();
         // act - assert
-        mocMvc.perform(get("/TiqueteParqueos")
+        mocMvc.perform(get("/tiquetes-parqueo")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(1)))

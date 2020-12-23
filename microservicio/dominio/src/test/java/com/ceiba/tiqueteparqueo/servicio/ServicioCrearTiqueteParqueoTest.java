@@ -13,28 +13,30 @@ import com.ceiba.BasePrueba;
 
 public class ServicioCrearTiqueteParqueoTest {
 
-    @Test
-    public void crearTiqueteParqueoExistenciaPreviaTest() {
-        // arrange
-        TiqueteParqueo tiqueteParqueo = new TiqueteParqueoTestDataBuilder().build();
-        RepositorioTiqueteParqueo repositorioTiqueteParqueo = Mockito.mock(RepositorioTiqueteParqueo.class);
-        Mockito.when(repositorioTiqueteParqueo.existePorPlacaAndSinFechaSalida(Mockito.anyString())).thenReturn(true);
-        ServicioCrearTiqueteParqueo servicioCrearTiqueteParqueo = new ServicioCrearTiqueteParqueo(repositorioTiqueteParqueo);
-        // act - assert
-        BasePrueba.assertThrows(() -> servicioCrearTiqueteParqueo.ejecutar(tiqueteParqueo), ExcepcionDuplicidad.class,"El vehiculo ya cuenta con un tiquete activo");
-    }
-    
-    @Test
-    public void crearTiqueteParqueoSinExistenciaPreviaTest() {
-        // arrange
-        TiqueteParqueo tiqueteParqueo = new TiqueteParqueoTestDataBuilder().conId(1L).build();
-        RepositorioTiqueteParqueo repositorioTiqueteParqueo = Mockito.mock(RepositorioTiqueteParqueo.class);
-        Mockito.when(repositorioTiqueteParqueo.existePorPlacaAndSinFechaSalida(Mockito.anyString())).thenReturn(false);
-        Mockito.when(repositorioTiqueteParqueo.existePorId(Mockito.anyLong())).thenReturn(true);
-        ServicioCrearTiqueteParqueo servicioCrearTiqueteParqueo = new ServicioCrearTiqueteParqueo(repositorioTiqueteParqueo);
-        // act 
-        servicioCrearTiqueteParqueo.ejecutar(tiqueteParqueo);
-        //assert
-        Assert.assertTrue(repositorioTiqueteParqueo.existePorId(1L));
-    }
+	@Test
+	public void crearTiqueteParqueoExistenciaPreviaTest() {
+		// arrange
+		TiqueteParqueo tiqueteParqueo = new TiqueteParqueoTestDataBuilder().build();
+		RepositorioTiqueteParqueo repositorioTiqueteParqueo = Mockito.mock(RepositorioTiqueteParqueo.class);
+		Mockito.when(repositorioTiqueteParqueo.existePorPlacaAndSinFechaSalida(Mockito.anyString())).thenReturn(true);
+		ServicioCrearTiqueteParqueo servicioCrearTiqueteParqueo = new ServicioCrearTiqueteParqueo(
+				repositorioTiqueteParqueo);
+		// act - assert
+		BasePrueba.assertThrows(() -> servicioCrearTiqueteParqueo.ejecutar(tiqueteParqueo), ExcepcionDuplicidad.class,
+				"El vehiculo ya cuenta con un tiquete activo");
+	}
+
+	@Test
+	public void crearTiqueteParqueoSinExistenciaPreviaTest() {
+		// arrange
+		TiqueteParqueo tiqueteParqueo = new TiqueteParqueoTestDataBuilder().build();
+		RepositorioTiqueteParqueo repositorioTiqueteParqueo = Mockito.mock(RepositorioTiqueteParqueo.class);
+		Mockito.when(repositorioTiqueteParqueo.existePorPlacaAndSinFechaSalida(Mockito.anyString())).thenReturn(false);
+		ServicioCrearTiqueteParqueo servicioCrearTiqueteParqueo = new ServicioCrearTiqueteParqueo(
+				repositorioTiqueteParqueo);
+		// act
+		long resultado = servicioCrearTiqueteParqueo.ejecutar(tiqueteParqueo);
+		// assert
+		Assert.assertEquals(0L, resultado);
+	}
 }
