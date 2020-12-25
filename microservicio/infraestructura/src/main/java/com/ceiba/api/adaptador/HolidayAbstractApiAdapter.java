@@ -2,10 +2,13 @@ package com.ceiba.api.adaptador;
 
 import java.time.LocalDateTime;
 
-import com.ceiba.api.consumer.HolidayAbstractApiConsumer;
-import com.ceiba.tiqueteparqueo.puerto.api.HolidayAbstractApiAdapter;
+import org.springframework.stereotype.Component;
 
-public class HolidayAbstractApiPort implements HolidayAbstractApiAdapter{
+import com.ceiba.api.consumer.HolidayAbstractApiConsumer;
+import com.ceiba.tiqueteparqueo.puerto.api.ApiValidadorFechaFestivo;
+
+@Component
+public class HolidayAbstractApiAdapter implements ApiValidadorFechaFestivo{
 
 	@Override
 	public boolean esFestivo(LocalDateTime fecha) {

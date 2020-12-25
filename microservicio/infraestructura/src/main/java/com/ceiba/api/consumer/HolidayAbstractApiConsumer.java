@@ -25,7 +25,7 @@ public class HolidayAbstractApiConsumer {
 					+ fecha.getYear() + "&month=" + fecha.getMonthValue() + "&day=" + fecha.getDayOfMonth()).execute()
 					.returnContent();
 
-			return !Content.NO_CONTENT.equals(content);
+			return !"[]".equals(content.toString());
 		} catch (IOException error) {
 			// throw some error
 			return false;

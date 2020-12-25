@@ -7,3 +7,10 @@ create table tiqueteparqueo (
  valor_pagar double, 
  primary key (id)
 );
+
+create table tarifario (
+ id int(11) not null auto_increment,
+ llave varchar(100) not null,
+ valor double not null,
+ primary key (id)
+);

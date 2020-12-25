@@ -2,9 +2,13 @@ package com.ceiba.tiqueteparqueo.modelo.entidad;
 
 import lombok.Getter;
 
+import java.time.DayOfWeek;
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
+import java.util.Map;
 
 import com.ceiba.tiqueteparqueo.modelo.TipoVehiculo;
+import com.ceiba.tiqueteparqueo.puerto.api.ApiValidadorFechaFestivo;
 
 import static com.ceiba.dominio.ValidadorArgumento.validarObligatorio;
 import static com.ceiba.dominio.ValidadorArgumento.validarValido;
@@ -35,5 +39,44 @@ public class TiqueteParqueo {
 		this.fechaIngreso = fechaIngreso;
 		this.fechaSalida = fechaSalida;
 		this.valorAPagar = valorAPagar;
+	}
+
+	/**
+	 * Asigna el valor a pagar del tiquete
+	 * 
+	 * @param validadorFechaFestivo validadorFechaFestivo api para validar si una
+	 *                              fecha es festivo en calendario Colombiano.
+	 * @param tarifario             map de tarifas del parqueadero.
+	 */
+	public void asignarValorPagar(ApiValidadorFechaFestivo validadorFechaFestivo, Map<String, Double> tarifario) {
+		// La salida se genera una sola vez, cuando la fecha de salida se haya asignado
+		// y no haya valor total
+		if (fechaSalida != null && valorAPagar == null) {
+			this.valorAPagar = calcularTarifaNormal(tarifario.get(tipoVehiculo));
+
+			if (fechaSalida.getDayOfWeek() != DayOfWeek.SATURDAY && fechaSalida.getDayOfWeek() != DayOfWeek.SUNDAY
+					&& (fechaSalida.getHour() >= 23 || fechaSalida.getHour() <= 5)) {
+				this.valorAPagar += tarifario.get("Recargo_Nocturno");
+			}
+
+			if (fechaIngreso.getDayOfWeek().compareTo(DayOfWeek.SUNDAY) == 0
+					|| fechaIngreso.getDayOfWeek().compareTo(DayOfWeek.SATURDAY) == 0) {
+				this.valorAPagar += (this.valorAPagar * 0.20);
+			} else if (validadorFechaFestivo.esFestivo(fechaIngreso)) {
+				this.valorAPagar = this.valorAPagar / 2;
+			}
+		}
+	}
+
+	/**
+	 * Calcula la tarifa base del tiquete
+	 * 
+	 * @return tarifa base
+	 */
+	private double calcularTarifaNormal(double precioHora) {
+		long hours = fechaIngreso.getMinute() == fechaSalida.getMinute() ? 0 : 1;
+		hours += ChronoUnit.HOURS.between(fechaIngreso, fechaSalida);
+
+		return hours * precioHora;
 	}
 }

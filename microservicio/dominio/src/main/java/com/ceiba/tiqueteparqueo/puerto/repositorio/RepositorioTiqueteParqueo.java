@@ -14,8 +14,8 @@ public interface RepositorioTiqueteParqueo {
      * Permite actualizar un tiquete de parqueo
      * @param tiqueteParqueo
      */
-    void actualizar(TiqueteParqueo tiqueteParqueo);
 
+    void actualizar(TiqueteParqueo tiqueteParqueo);
     /**
      * Permite eliminar un tiquete de parqueo
      * @param id
