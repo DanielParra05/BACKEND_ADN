@@ -35,7 +35,6 @@ public class ConsultaControladorTiqueteParqueoTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(1)))
                 .andExpect(jsonPath("$[0].placaVehiculo", is("KDL100")));
-    }
-
+    }   
 
 }

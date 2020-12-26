@@ -14,18 +14,18 @@ public class ComandoTiqueteParqueoTestDataBuilder {
 	private LocalDateTime fechaSalida;
 	private Double valorAPagar;
 
-    public ComandoTiqueteParqueoTestDataBuilder() {
-    	placaVehiculo = UUID.randomUUID().toString();
-    	tipoVehiculo = "Moto";
-    	fechaIngreso = LocalDateTime.now();
-    }
+	public ComandoTiqueteParqueoTestDataBuilder() {
+		placaVehiculo = UUID.randomUUID().toString();
+		tipoVehiculo = "Moto";
+		fechaIngreso = LocalDateTime.now();
+	}
 
-    public ComandoTiqueteParqueoTestDataBuilder conPlacaVehiculo(String placaVehiculo) {
-        this.placaVehiculo = placaVehiculo;
-        return this;
-    }
+	public ComandoTiqueteParqueoTestDataBuilder conPlacaVehiculo(String placaVehiculo) {
+		this.placaVehiculo = placaVehiculo;
+		return this;
+	}
 
-    public ComandoTiqueteParqueo build() {
-        return new ComandoTiqueteParqueo(id, placaVehiculo, tipoVehiculo, fechaIngreso,fechaSalida, valorAPagar);
-    }
+	public ComandoTiqueteParqueo build() {
+		return new ComandoTiqueteParqueo(id, placaVehiculo, tipoVehiculo, fechaIngreso, fechaSalida, valorAPagar);
+	}
 }

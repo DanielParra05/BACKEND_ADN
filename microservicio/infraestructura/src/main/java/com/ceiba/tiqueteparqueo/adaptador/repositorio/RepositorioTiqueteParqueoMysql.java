@@ -20,9 +20,6 @@ public class RepositorioTiqueteParqueoMysql implements RepositorioTiqueteParqueo
 
     @SqlStatement(namespace="tiqueteparqueo", value="eliminar")
     private static String sqlEliminar;
-
-    @SqlStatement(namespace="tiqueteparqueo", value="existePorPlaca")
-    private static String sqlExistePorPlaca;
     
     @SqlStatement(namespace="tiqueteparqueo", value="existePorId")
     private static String sqlExistePorId;
@@ -45,14 +42,6 @@ public class RepositorioTiqueteParqueoMysql implements RepositorioTiqueteParqueo
         paramSource.addValue("id", id);
 
         this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminar, paramSource);
-    }
-
-    @Override
-    public boolean existePorPlaca(String placa) {
-        MapSqlParameterSource paramSource = new MapSqlParameterSource();
-        paramSource.addValue("placaVehiculo", placa);
-
-        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExistePorPlaca,paramSource, Boolean.class);
     }
 
     @Override

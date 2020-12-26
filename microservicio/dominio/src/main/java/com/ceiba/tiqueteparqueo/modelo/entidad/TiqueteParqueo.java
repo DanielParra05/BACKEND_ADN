@@ -2,6 +2,7 @@ package com.ceiba.tiqueteparqueo.modelo.entidad;
 
 import lombok.Getter;
 
+import java.io.IOException;
 import java.time.DayOfWeek;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
@@ -47,8 +48,9 @@ public class TiqueteParqueo {
 	 * @param validadorFechaFestivo validadorFechaFestivo api para validar si una
 	 *                              fecha es festivo en calendario Colombiano.
 	 * @param tarifario             map de tarifas del parqueadero.
+	 * @throws IOException 
 	 */
-	public void asignarValorPagar(ApiValidadorFechaFestivo validadorFechaFestivo, Map<String, Double> tarifario) {
+	public void asignarValorPagar(ApiValidadorFechaFestivo validadorFechaFestivo, Map<String, Double> tarifario) throws IOException {
 		// La salida se genera una sola vez, cuando la fecha de salida se haya asignado
 		// y no haya valor total
 		if (fechaSalida != null && valorAPagar == null) {

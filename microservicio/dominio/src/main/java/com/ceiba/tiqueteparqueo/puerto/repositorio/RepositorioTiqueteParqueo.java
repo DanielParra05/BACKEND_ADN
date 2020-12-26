@@ -21,13 +21,6 @@ public interface RepositorioTiqueteParqueo {
      * @param id
      */
     void eliminar(Long id);
-
-    /**
-     * Permite validar si existe un tiquete de parqueo con una placa
-     * @param nombre
-     * @return si existe o no
-     */
-    boolean existePorPlaca(String placa);
     
     /**
      * Permite validar si existe un tiquete de parqueo por su id

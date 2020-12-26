@@ -46,8 +46,8 @@ public class ComandoControladorTiqueteParqueoTest {
     @Test
     public void actualizar() throws Exception{
         // arrange
-        Long id = 2L;
-        ComandoTiqueteParqueo tiqueteParqueo = new ComandoTiqueteParqueoTestDataBuilder().build();
+        Long id = 1L;
+        ComandoTiqueteParqueo tiqueteParqueo = new ComandoTiqueteParqueoTestDataBuilder().conPlacaVehiculo("KDL100").build();
 
         // act - assert
         mocMvc.perform(put("/tiquete-parqueo/{id}",id)
