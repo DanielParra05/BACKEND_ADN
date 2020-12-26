@@ -14,7 +14,7 @@ public class ServicioActualizarTiqueteParqueo {
 	private final RepositorioTiqueteParqueo repositorioTiqueteParqueo;
 	private final ApiValidadorFechaFestivo validadorFechaFestivo;
 	private final DaoTarifario daoTarifario;
-	private static final String EL_SERVICIO_DE_VALIDACION_FESTIVOS_FALLO = "La API de validacion de festivos ha fallado";
+	private static final String EL_SERVICIO_DE_VALIDACION_FESTIVOS_FALLO = "La API de validacion de festivos ha fallado: ";
 	private static final String EL_TIQUETE_NO_EXISTE_EN_EL_SISTEMA = "El tiquete a actualizar no existe en el sistema";
 
 	public ServicioActualizarTiqueteParqueo(RepositorioTiqueteParqueo repositorioTiqueteParqueo,
@@ -30,8 +30,7 @@ public class ServicioActualizarTiqueteParqueo {
 			tiqueteParqueo.asignarValorPagar(validadorFechaFestivo, daoTarifario.listar());
 			this.repositorioTiqueteParqueo.actualizar(tiqueteParqueo);
 		} catch (IOException e) {
-			e.printStackTrace();
-			throw new ExcepcionSinDatos(EL_SERVICIO_DE_VALIDACION_FESTIVOS_FALLO);
+			throw new ExcepcionSinDatos(EL_SERVICIO_DE_VALIDACION_FESTIVOS_FALLO + e.getMessage());
 		}
 	}
 
