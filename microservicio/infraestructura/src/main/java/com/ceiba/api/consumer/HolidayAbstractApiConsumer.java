@@ -3,7 +3,6 @@ package com.ceiba.api.consumer;
 import java.io.IOException;
 import java.time.LocalDateTime;
 
-import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.fluent.Content;
 import org.apache.http.client.fluent.Request;
 
@@ -15,6 +14,10 @@ import org.apache.http.client.fluent.Request;
  *
  */
 public class HolidayAbstractApiConsumer {
+	
+	  private HolidayAbstractApiConsumer() {
+		    throw new IllegalStateException("HolidayAbstractApiConsumer");
+		  }
 
 	private static final String PAIS = "CO";
 	private static final String API_KEY = "5e0e2b64c9964607bac699cc84e42f74";

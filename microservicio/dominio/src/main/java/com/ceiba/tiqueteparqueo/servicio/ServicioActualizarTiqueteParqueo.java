@@ -30,6 +30,7 @@ public class ServicioActualizarTiqueteParqueo {
 			tiqueteParqueo.asignarValorPagar(validadorFechaFestivo, daoTarifario.listar());
 			this.repositorioTiqueteParqueo.actualizar(tiqueteParqueo);
 		} catch (IOException e) {
+			e.printStackTrace();
 			throw new ExcepcionSinDatos(EL_SERVICIO_DE_VALIDACION_FESTIVOS_FALLO);
 		}
 	}
