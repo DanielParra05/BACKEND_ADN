@@ -30,9 +30,14 @@ public class TiqueteParqueoTestDataBuilder {
         return this;
     }
     
-    public TiqueteParqueoTestDataBuilder conPlaca(String placa) {
-        this.placaVehiculo = placa;
-        return this;
+    public TiqueteParqueoTestDataBuilder conFechaIngreso(LocalDateTime fechaIngreso) {
+    	this.fechaIngreso = fechaIngreso;
+    	return this;
+    }
+    
+    public TiqueteParqueoTestDataBuilder conFechaSalida(LocalDateTime fechaSalida) {
+    	this.fechaSalida = fechaSalida;
+    	return this;
     }
 
     public TiqueteParqueo build() {
