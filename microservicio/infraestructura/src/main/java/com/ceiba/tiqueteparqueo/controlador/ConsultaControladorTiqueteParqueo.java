@@ -3,6 +3,8 @@ package com.ceiba.tiqueteparqueo.controlador;
 import java.util.List;
 
 import com.ceiba.tiqueteparqueo.consulta.ManejadorListarTiqueteParqueos;
+
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,6 +16,7 @@ import io.swagger.annotations.ApiOperation;
 
 @RestController
 @RequestMapping("/tiquetes-parqueo")
+@CrossOrigin(origins = "http://localhost:4200")
 @Api(tags={"Controlador consulta TiqueteParqueo"})
 public class ConsultaControladorTiqueteParqueo {
 
