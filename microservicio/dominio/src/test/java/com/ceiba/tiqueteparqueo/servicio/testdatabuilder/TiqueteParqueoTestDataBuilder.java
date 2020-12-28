@@ -18,6 +18,7 @@ public class TiqueteParqueoTestDataBuilder {
     	placaVehiculo = "GKK550";
     	tipoVehiculo = TipoVehiculo.CARRO;
     	fechaIngreso = LocalDateTime.now();
+    	valorAPagar=0.0;
     }
 
     public TiqueteParqueoTestDataBuilder conPlacaVehiculo(String placaVehiculo) {

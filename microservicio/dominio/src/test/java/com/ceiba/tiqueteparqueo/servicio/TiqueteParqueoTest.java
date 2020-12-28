@@ -78,7 +78,7 @@ public class TiqueteParqueoTest {
 		TiqueteParqueo tiqueteParqueo = new TiqueteParqueoTestDataBuilder()
 				.conFechaIngreso(LocalDateTime.of(2020, Month.JULY, 24, 12, 0)).conFechaSalida(LocalDateTime.of(2020, Month.JULY, 25, 12, 0)).build();
 		// Assert
-		Assert.assertEquals(null, tiqueteParqueo.getValorAPagar());
+		Assert.assertEquals((Double)0.0, tiqueteParqueo.getValorAPagar());
 		Assert.assertEquals("CARRO", tiqueteParqueo.getTipoVehiculo());
 		Assert.assertEquals(LocalDateTime.of(2020, Month.JULY, 24, 12, 0), tiqueteParqueo.getFechaIngreso());
 		Assert.assertEquals(LocalDateTime.of(2020, Month.JULY, 25, 12, 0), tiqueteParqueo.getFechaSalida());

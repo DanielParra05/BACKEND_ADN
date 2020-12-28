@@ -19,7 +19,7 @@ public class DaoTiqueteParqueoMysql implements DaoTiqueteParqueo {
 	@SqlStatement(namespace = "tiqueteparqueo", value = "listar")
 	private static String sqlListar;
 
-	@SqlStatement(namespace = "tiqueteparqueo", value = "existePorId")
+	@SqlStatement(namespace = "tiqueteparqueo", value = "buscarPorId")
 	private static String sqlExistePorId;
 
 	public DaoTiqueteParqueoMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {

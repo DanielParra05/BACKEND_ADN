@@ -30,5 +30,9 @@ allprojects {
 	project.ext.h2 = ["com.h2database:h2:1.4.194"]
 	project.ext.actuator=["org.springframework.boot:spring-boot-starter-actuator:2.1.6.RELEASE"]
 	
+	project.ext.apachehttpcomponents = ["org.apache.httpcomponents:fluent-hc:4.5.13"]
+	project.ext.javaxws = ["javax.xml.ws:jaxws-api:2.2.6"]	
+	project.ext.javaxbind= ["javax.xml.bind:jaxb-api:2.1"]
+	project.ext.jaxwsrt = ["com.sun.xml.ws:jaxws-rt:2.1.4"]
 
 }

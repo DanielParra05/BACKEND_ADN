@@ -18,6 +18,7 @@ public class ComandoTiqueteParqueoTestDataBuilder {
 		placaVehiculo = UUID.randomUUID().toString();
 		tipoVehiculo = "Moto";
 		fechaIngreso = LocalDateTime.now();
+		valorAPagar = 0.0;
 	}
 
 	public ComandoTiqueteParqueoTestDataBuilder conPlacaVehiculo(String placaVehiculo) {

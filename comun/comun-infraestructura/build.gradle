@@ -22,5 +22,10 @@ dependencies {
 	compile project.ext.swagger
 	compile project.ext.actuator
 	
+	compile project.ext.apachehttpcomponents
+	compile project.ext.javaxws
+	compile project.ext.javaxbind
+	compile project.ext.jaxwsrt
+	
 	implementation project(':comun:comun-dominio')
 }

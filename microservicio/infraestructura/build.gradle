@@ -18,7 +18,6 @@ dependencies {
 	compile project.ext.swagger
 
 	compile project.ext.apachecommons
-	compile project.ext.apachehttpcomponents
 	compile project.ext.springbootjdbc
 	runtimeOnly project.ext.db
 	testImplementation project.ext.flywaytest

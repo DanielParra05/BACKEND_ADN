@@ -36,7 +36,7 @@ public class ComandoControladorTiqueteParqueoTest {
         ComandoTiqueteParqueo tiqueteParqueo = new ComandoTiqueteParqueoTestDataBuilder().build();
 
         // act - assert
-        mocMvc.perform(post("/tiquete-parqueo")
+        mocMvc.perform(post("/tiquetes-parqueo")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(tiqueteParqueo)))
                 .andExpect(status().isOk())
@@ -50,7 +50,7 @@ public class ComandoControladorTiqueteParqueoTest {
         ComandoTiqueteParqueo tiqueteParqueo = new ComandoTiqueteParqueoTestDataBuilder().conPlacaVehiculo("KDL100").build();
 
         // act - assert
-        mocMvc.perform(put("/tiquete-parqueo/{id}",id)
+        mocMvc.perform(put("/tiquetes-parqueo/{id}",id)
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(tiqueteParqueo)))
                 .andExpect(status().isOk());
@@ -62,7 +62,7 @@ public class ComandoControladorTiqueteParqueoTest {
         Long id = 2L;
 
         // act - assert
-        mocMvc.perform(delete("/tiquete-parqueo/{id}",id)
+        mocMvc.perform(delete("/tiquetes-parqueo/{id}",id)
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());

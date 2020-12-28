@@ -24,8 +24,8 @@ public class BeanServicio {
     }
 
     @Bean
-    public ServicioActualizarTiqueteParqueo servicioActualizarTiqueteParqueo(RepositorioTiqueteParqueo repositorioTiqueteParqueo, ApiValidadorFechaFestivo validadorFechaFestivo, DaoTarifario daoTarifario, DaoTiqueteParqueo daoTiqueteParqueo) {
-        return new ServicioActualizarTiqueteParqueo(repositorioTiqueteParqueo, validadorFechaFestivo, daoTarifario, daoTiqueteParqueo);
+    public ServicioActualizarTiqueteParqueo servicioActualizarTiqueteParqueo(RepositorioTiqueteParqueo repositorioTiqueteParqueo, ApiValidadorFechaFestivo validadorFechaFestivo, DaoTarifario daoTarifario) {
+        return new ServicioActualizarTiqueteParqueo(repositorioTiqueteParqueo, validadorFechaFestivo, daoTarifario);
     }
 	
 
