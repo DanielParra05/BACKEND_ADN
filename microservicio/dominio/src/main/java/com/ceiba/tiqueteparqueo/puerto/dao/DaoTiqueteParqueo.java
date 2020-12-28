@@ -11,4 +11,10 @@ public interface DaoTiqueteParqueo {
      * @return los TiqueteParqueos
      */
     List<DtoTiqueteParqueo> listar();
+    
+    /**
+     * Permite buscar un Tiquete pparqueo por su ID 
+     * @return TiqueteParqueo
+     */
+    DtoTiqueteParqueo buscarTiquetePorId(Long id);
 }

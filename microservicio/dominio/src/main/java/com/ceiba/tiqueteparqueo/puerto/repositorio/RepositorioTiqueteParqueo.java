@@ -20,14 +20,7 @@ public interface RepositorioTiqueteParqueo {
      * Permite eliminar un tiquete de parqueo
      * @param id
      */
-    void eliminar(Long id);
-    
-    /**
-     * Permite validar si existe un tiquete de parqueo por su id
-     * @param nombre
-     * @return si existe o no
-     */
-    boolean existePorId(Long id);
+    void eliminar(Long id);    
 
     /**
      * Permite validar si existe un TiqueteParqueo con determinada placa  y sin fecha de salida

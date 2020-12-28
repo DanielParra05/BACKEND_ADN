@@ -2,6 +2,7 @@ package com.ceiba.tiqueteparqueo.adaptador.repositorio;
 
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
+import com.ceiba.tiqueteparqueo.adaptador.dao.MapeoTiqueteParqueo;
 import com.ceiba.tiqueteparqueo.modelo.entidad.TiqueteParqueo;
 import com.ceiba.tiqueteparqueo.puerto.repositorio.RepositorioTiqueteParqueo;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
@@ -20,9 +21,7 @@ public class RepositorioTiqueteParqueoMysql implements RepositorioTiqueteParqueo
 
     @SqlStatement(namespace="tiqueteparqueo", value="eliminar")
     private static String sqlEliminar;
-    
-    @SqlStatement(namespace="tiqueteparqueo", value="existePorId")
-    private static String sqlExistePorId;
+   
 
     @SqlStatement(namespace="tiqueteparqueo", value="existeSinFechaSalida") 
     private static String sqlExisteSinFechaSalida;
@@ -57,11 +56,4 @@ public class RepositorioTiqueteParqueoMysql implements RepositorioTiqueteParqueo
         return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExisteSinFechaSalida,paramSource, Boolean.class);
     }
 
-	@Override
-	public boolean existePorId(Long id) {
-        MapSqlParameterSource paramSource = new MapSqlParameterSource();
-        paramSource.addValue("id", id);
-        
-        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExistePorId,paramSource, Boolean.class);
-	}
 }

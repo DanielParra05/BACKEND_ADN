@@ -53,7 +53,7 @@ public class TiqueteParqueo {
 	public void asignarValorPagar(ApiValidadorFechaFestivo validadorFechaFestivo, Map<String, Double> tarifario) throws IOException {
 		// La salida se genera una sola vez, cuando la fecha de salida se haya asignado
 		// y no haya valor total
-		if (fechaSalida != null && valorAPagar == null) {
+		if (fechaSalida != null && valorAPagar == 0.0) {
 			this.valorAPagar = calcularTarifaNormal(tarifario.get(tipoVehiculo));
 
 			if (fechaSalida.getDayOfWeek() != DayOfWeek.SATURDAY && fechaSalida.getDayOfWeek() != DayOfWeek.SUNDAY
@@ -76,7 +76,7 @@ public class TiqueteParqueo {
 	 * @return tarifa base
 	 */
 	private double calcularTarifaNormal(double precioHora) {
-		long hours = fechaIngreso.getMinute() == fechaSalida.getMinute() ? 0 : 1;
+		long hours = (fechaIngreso.getMinute() == fechaSalida.getMinute()) &&  fechaIngreso.getHour() != fechaSalida.getHour() ? 0 : 1;
 		hours += ChronoUnit.HOURS.between(fechaIngreso, fechaSalida);
 
 		return hours * precioHora;

@@ -10,11 +10,14 @@ import com.ceiba.tiqueteparqueo.modelo.dto.DtoTiqueteParqueo;
 @Component
 public class ManejadorListarTiqueteParqueos {
 
-    private final DaoTiqueteParqueo daoTiqueteParqueo;
+	private final DaoTiqueteParqueo daoTiqueteParqueo;
 
-    public ManejadorListarTiqueteParqueos(DaoTiqueteParqueo daoTiqueteParqueo){
-        this.daoTiqueteParqueo = daoTiqueteParqueo;
-    }
+	public ManejadorListarTiqueteParqueos(DaoTiqueteParqueo daoTiqueteParqueo) {
+		this.daoTiqueteParqueo = daoTiqueteParqueo;
+	}
 
-    public List<DtoTiqueteParqueo> ejecutar(){ return this.daoTiqueteParqueo.listar(); }
+	public List<DtoTiqueteParqueo> ejecutar() {
+		return this.daoTiqueteParqueo.listar();
+	}
+
 }
