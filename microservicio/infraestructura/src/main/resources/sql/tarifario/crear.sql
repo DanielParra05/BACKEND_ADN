@@ -1,0 +1,1 @@
+insert into tarifario (llave, valor) values (:llave, :valor);

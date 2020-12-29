@@ -1,4 +1,4 @@
-package com.ceiba.tiqueteparqueo.puerto.dao;
+package com.ceiba.tarifario.puerto.dao;
 
 import java.util.Map;
 

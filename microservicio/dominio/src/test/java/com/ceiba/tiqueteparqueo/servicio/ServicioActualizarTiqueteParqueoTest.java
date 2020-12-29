@@ -1,9 +1,9 @@
 package com.ceiba.tiqueteparqueo.servicio;
 
 import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
+import com.ceiba.tarifario.puerto.dao.DaoTarifario;
 import com.ceiba.tiqueteparqueo.modelo.entidad.TiqueteParqueo;
 import com.ceiba.tiqueteparqueo.puerto.api.ApiValidadorFechaFestivo;
-import com.ceiba.tiqueteparqueo.puerto.dao.DaoTarifario;
 import com.ceiba.tiqueteparqueo.puerto.repositorio.RepositorioTiqueteParqueo;
 import com.ceiba.tiqueteparqueo.servicio.testdatabuilder.TiqueteParqueoTestDataBuilder;
 import com.ceiba.BasePrueba;

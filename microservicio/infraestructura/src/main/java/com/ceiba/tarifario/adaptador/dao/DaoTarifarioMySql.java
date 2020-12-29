@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
-import com.ceiba.tiqueteparqueo.puerto.dao.DaoTarifario;
+import com.ceiba.tarifario.puerto.dao.DaoTarifario;
 
 @Component
 public class DaoTarifarioMySql implements DaoTarifario {
