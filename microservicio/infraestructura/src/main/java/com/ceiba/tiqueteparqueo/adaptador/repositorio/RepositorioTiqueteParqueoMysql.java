@@ -2,7 +2,6 @@ package com.ceiba.tiqueteparqueo.adaptador.repositorio;
 
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
-import com.ceiba.tiqueteparqueo.adaptador.dao.MapeoTiqueteParqueo;
 import com.ceiba.tiqueteparqueo.modelo.entidad.TiqueteParqueo;
 import com.ceiba.tiqueteparqueo.puerto.repositorio.RepositorioTiqueteParqueo;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;

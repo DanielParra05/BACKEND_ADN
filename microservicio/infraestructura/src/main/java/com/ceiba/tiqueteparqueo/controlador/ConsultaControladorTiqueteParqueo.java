@@ -6,7 +6,6 @@ import com.ceiba.tiqueteparqueo.consulta.ManejadorBuscarPorId;
 import com.ceiba.tiqueteparqueo.consulta.ManejadorListarTiqueteParqueos;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

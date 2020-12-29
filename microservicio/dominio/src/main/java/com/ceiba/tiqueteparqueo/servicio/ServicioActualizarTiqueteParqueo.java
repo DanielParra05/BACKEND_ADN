@@ -4,11 +4,9 @@ import java.io.IOException;
 
 import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
 import com.ceiba.dominio.excepcion.ExcepcionSinDatos;
-import com.ceiba.tiqueteparqueo.modelo.dto.DtoTiqueteParqueo;
 import com.ceiba.tiqueteparqueo.modelo.entidad.TiqueteParqueo;
 import com.ceiba.tiqueteparqueo.puerto.api.ApiValidadorFechaFestivo;
 import com.ceiba.tiqueteparqueo.puerto.dao.DaoTarifario;
-import com.ceiba.tiqueteparqueo.puerto.dao.DaoTiqueteParqueo;
 import com.ceiba.tiqueteparqueo.puerto.repositorio.RepositorioTiqueteParqueo;
 
 public class ServicioActualizarTiqueteParqueo {

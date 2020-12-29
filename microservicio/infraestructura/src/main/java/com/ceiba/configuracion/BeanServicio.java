@@ -2,7 +2,6 @@ package com.ceiba.configuracion;
 
 import com.ceiba.tiqueteparqueo.puerto.api.ApiValidadorFechaFestivo;
 import com.ceiba.tiqueteparqueo.puerto.dao.DaoTarifario;
-import com.ceiba.tiqueteparqueo.puerto.dao.DaoTiqueteParqueo;
 import com.ceiba.tiqueteparqueo.puerto.repositorio.RepositorioTiqueteParqueo;
 import com.ceiba.tiqueteparqueo.servicio.ServicioActualizarTiqueteParqueo;
 import com.ceiba.tiqueteparqueo.servicio.ServicioCrearTiqueteParqueo;
