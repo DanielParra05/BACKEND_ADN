@@ -1,4 +1,4 @@
-package com.ceiba.tiqueteparqueo.servicio;
+package com.ceiba.tiqueteparqueo.modelo;
 
 import java.io.IOException;
 import java.time.LocalDateTime;

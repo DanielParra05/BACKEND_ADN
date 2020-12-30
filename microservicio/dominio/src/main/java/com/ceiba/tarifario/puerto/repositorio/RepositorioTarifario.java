@@ -26,5 +26,5 @@ public interface RepositorioTarifario {
 	 */
 	void eliminar(Long id);
 	
-	boolean existePorLlave(String lalve);
+	boolean existePorLlave(String llave);
 }

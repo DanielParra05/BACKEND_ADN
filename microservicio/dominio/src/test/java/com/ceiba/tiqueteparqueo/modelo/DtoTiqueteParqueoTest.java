@@ -1,4 +1,4 @@
-package com.ceiba.tiqueteparqueo.servicio;
+package com.ceiba.tiqueteparqueo.modelo;
 
 import java.time.LocalDateTime;
 import java.time.Month;

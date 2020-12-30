@@ -7,7 +7,7 @@ import com.ceiba.tarifario.puerto.repositorio.RepositorioTarifario;
 public class ServicioCrearTarifa {
 
 	private final RepositorioTarifario repositorio;
-	private final String TARIFA_DUPLICADA = "La tarifa ya existe";
+	private static final String TARIFA_DUPLICADA = "La tarifa ya existe";
 
 	public ServicioCrearTarifa(RepositorioTarifario repositorio) {
 		this.repositorio = repositorio;

@@ -11,12 +11,12 @@ public class ServicioEliminarTiqueteParqueoTest {
 	public void validarEliminarTiqueteParqueo() {
 		// arrange
 		RepositorioTiqueteParqueo repositorioTiqueteParqueo = Mockito.mock(RepositorioTiqueteParqueo.class);
-		Mockito.when(repositorioTiqueteParqueo.existePorId(Mockito.anyLong())).thenReturn(true);
+		Mockito.when(repositorioTiqueteParqueo.existePorId(Mockito.anyLong())).thenReturn(false);
 		ServicioEliminarTiqueteParqueo servicioEliminarTiqueteParqueo = new ServicioEliminarTiqueteParqueo(
 				repositorioTiqueteParqueo);
 		// act
 		servicioEliminarTiqueteParqueo.ejecutar(1L);
 		// assert
-		Assert.assertTrue(repositorioTiqueteParqueo.existePorId(1L));
+		Assert.assertFalse(repositorioTiqueteParqueo.existePorId(1L));
 	}
 }
