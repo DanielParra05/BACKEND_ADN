@@ -5,9 +5,9 @@ import lombok.Getter;
 @Getter
 public class Tarifa {
 
-	Long id;
-	String llave;
-	Double valor;
+	private Long id;
+	private String llave;
+	private Double valor;
 	
 	public Tarifa(Long id, String llave, Double valor) {
 		this.id = id;

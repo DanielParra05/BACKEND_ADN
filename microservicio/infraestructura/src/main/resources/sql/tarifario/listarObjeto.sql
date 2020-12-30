@@ -1,0 +1,1 @@
+select id, llave, valor from tarifario

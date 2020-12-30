@@ -1,24 +1,21 @@
 package com.ceiba.tarifario.consulta;
 
-
-import java.util.List;
-
 import org.springframework.stereotype.Component;
 
 import com.ceiba.tarifario.modelo.dto.DtoTarifa;
 import com.ceiba.tarifario.puerto.dao.DaoTarifario;
 
 @Component
-public class ManejadorListarTarifario {
+public class ManejadorBuscarTarifaPorId {
 
 	private final DaoTarifario daoTarifario;
 	
-	public ManejadorListarTarifario (DaoTarifario daoTarifario) {
+	public ManejadorBuscarTarifaPorId (DaoTarifario daoTarifario) {
 		this.daoTarifario = daoTarifario;		
 	}
 	
-	public List<DtoTarifa> ejecutar() {		
-		return daoTarifario.listarComoObjetos();
+	public DtoTarifa ejecutar(Long id) {		
+		return daoTarifario.buscarPorId(id);
 	}
 	
 }

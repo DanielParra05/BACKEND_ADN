@@ -20,7 +20,7 @@ public class DaoTiqueteParqueoMysql implements DaoTiqueteParqueo {
 	private static String sqlListar;
 
 	@SqlStatement(namespace = "tiqueteparqueo", value = "buscarPorId")
-	private static String sqlExistePorId;
+	private static String buscarPorId;
 
 	public DaoTiqueteParqueoMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
 		this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
@@ -37,7 +37,7 @@ public class DaoTiqueteParqueoMysql implements DaoTiqueteParqueo {
 		MapSqlParameterSource paramSource = new MapSqlParameterSource();
         paramSource.addValue("id", id);
         
-		return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExistePorId,
+		return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(buscarPorId,
 				paramSource, new MapeoTiqueteParqueo());
 	}
 }
