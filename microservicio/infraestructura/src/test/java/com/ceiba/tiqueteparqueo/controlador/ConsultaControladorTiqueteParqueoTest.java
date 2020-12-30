@@ -1,13 +1,15 @@
 package com.ceiba.tiqueteparqueo.controlador;
 
+import static org.hamcrest.CoreMatchers.isA;
 import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.core.Is.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import java.util.LinkedHashMap;
+
 import com.ceiba.ApplicationMock;
-import com.ceiba.tiqueteparqueo.controlador.ConsultaControladorTiqueteParqueo;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,14 +29,21 @@ public class ConsultaControladorTiqueteParqueoTest {
 
     @Test
     public void listar() throws Exception {
-        // arrange
-    	String a = (mocMvc.perform(get("/tiquetes-parqueo")).andReturn()).getResponse().getContentAsString();
         // act - assert
         mocMvc.perform(get("/tiquetes-parqueo")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(1)))
                 .andExpect(jsonPath("$[0].placaVehiculo", is("KDL100")));
-    }   
+    } 
+    
+    @Test
+    public void buscarTiquetePorId() throws Exception {    	
+        // act - assert
+        mocMvc.perform(get("/tiquetes-parqueo/1")
+                .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$", isA(LinkedHashMap.class)));
+    } 
 
 }

@@ -1,6 +1,5 @@
 package com.ceiba.tarifario.controlador;
 
-
 import java.util.List;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -25,7 +24,8 @@ public class ConsultaControladorTarifario {
 	private final ManejadorListarTarifario manejadorListarTarifario;
 	private final ManejadorBuscarTarifaPorId manejadorBuscarTarifaPorId;
 
-	public ConsultaControladorTarifario(ManejadorListarTarifario manejadorListarTarifario, ManejadorBuscarTarifaPorId manejadorBuscarTarifaPorId) {
+	public ConsultaControladorTarifario(ManejadorListarTarifario manejadorListarTarifario,
+			ManejadorBuscarTarifaPorId manejadorBuscarTarifaPorId) {
 		this.manejadorListarTarifario = manejadorListarTarifario;
 		this.manejadorBuscarTarifaPorId = manejadorBuscarTarifaPorId;
 	}
@@ -35,8 +35,8 @@ public class ConsultaControladorTarifario {
 	public List<DtoTarifa> listarTarifas() {
 		return manejadorListarTarifario.ejecutar();
 	}
-	
-	 @GetMapping(value="/{id}")
+
+	@GetMapping(value = "/{id}")
 	@ApiOperation("Busca una tarifa por su id")
 	public DtoTarifa buscartarifaPorId(@PathVariable Long id) {
 		return manejadorBuscarTarifaPorId.ejecutar(id);
