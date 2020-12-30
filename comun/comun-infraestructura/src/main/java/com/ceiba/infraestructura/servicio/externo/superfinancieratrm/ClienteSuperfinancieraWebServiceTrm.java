@@ -14,7 +14,6 @@ import com.ceiba.infraestructura.servicio.externo.superfinancieratrm.libreria.Tc
  */
 public class ClienteSuperfinancieraWebServiceTrm {
 
-	private static final String WSDL = "https://www.superfinanciera.gov.co/SuperfinancieraWebServiceTRM/TCRMServicesWebService/TCRMServicesWebService?WSDL";
 	private static final String ENDPOINT_ADDRESS = "https://www.superfinanciera.gov.co/SuperfinancieraWebServiceTRM/TCRMServicesWebService/TCRMServicesWebService";
 	
 	/**
@@ -33,8 +32,7 @@ public class ClienteSuperfinancieraWebServiceTrm {
 	 * @return TcrmServicesInterface port del web service
 	 */
 	private static TcrmServicesInterface obtenerPort() {
-		TCRMServicesWebService service = new TCRMServicesWebService(
-				ClienteSuperfinancieraWebServiceTrm.class.getClassLoader().getResource(WSDL));
+		TCRMServicesWebService service = new TCRMServicesWebService();
 		TcrmServicesInterface port = service.getTcrmServicesInterfaceImplPort();
 
 		final BindingProvider bindProv = (BindingProvider) port;

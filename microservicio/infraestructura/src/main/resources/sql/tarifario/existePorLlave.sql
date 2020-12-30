@@ -1,0 +1,1 @@
+select count(1) from tarifario where llave = :llave

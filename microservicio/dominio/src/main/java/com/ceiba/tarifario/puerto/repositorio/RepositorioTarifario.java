@@ -25,4 +25,6 @@ public interface RepositorioTarifario {
 	 * @param id
 	 */
 	void eliminar(Long id);
+	
+	boolean existePorLlave(String lalve);
 }

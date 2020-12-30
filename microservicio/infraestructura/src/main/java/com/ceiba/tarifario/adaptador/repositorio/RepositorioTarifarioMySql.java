@@ -21,6 +21,9 @@ public class RepositorioTarifarioMySql implements RepositorioTarifario {
 
 	@SqlStatement(namespace = "tarifario", value = "eliminar")
 	private static String sqlEliminar;
+	
+	@SqlStatement(namespace = "tarifario", value = "existePorLlave")
+	private static String sqlExistePorLlave;
 
 	public RepositorioTarifarioMySql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
 		this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
@@ -42,6 +45,15 @@ public class RepositorioTarifarioMySql implements RepositorioTarifario {
 		paramSource.addValue("id", id);
 
 		this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminar, paramSource);
+	}
+	
+	@Override
+	public boolean existePorLlave(String llave) {
+		MapSqlParameterSource paramSource = new MapSqlParameterSource();
+		paramSource.addValue("llave", llave);
+
+		return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExistePorLlave,
+				paramSource, Boolean.class);
 	}
 
 }

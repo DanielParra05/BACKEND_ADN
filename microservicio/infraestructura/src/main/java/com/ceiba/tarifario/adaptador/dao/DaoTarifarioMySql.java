@@ -13,7 +13,6 @@ import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
 import com.ceiba.tarifario.modelo.dto.DtoTarifa;
 import com.ceiba.tarifario.puerto.dao.DaoTarifario;
-import com.ceiba.tiqueteparqueo.adaptador.dao.MapeoTiqueteParqueo;
 
 @Component
 public class DaoTarifarioMySql implements DaoTarifario {
