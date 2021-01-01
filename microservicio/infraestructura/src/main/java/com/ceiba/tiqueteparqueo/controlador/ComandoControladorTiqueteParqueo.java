@@ -13,7 +13,6 @@ import io.swagger.annotations.ApiOperation;
 
 @RestController
 @RequestMapping("/tiquetes-parqueo")
-@CrossOrigin(origins = "http://localhost:4200")
 @Api(tags = { "Controlador comando TiqueteParqueo"})
 public class ComandoControladorTiqueteParqueo {
 

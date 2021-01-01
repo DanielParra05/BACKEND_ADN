@@ -1,6 +1,5 @@
 package com.ceiba.tarifario.controlador;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,7 +19,6 @@ import io.swagger.annotations.ApiOperation;
 
 @RestController
 @RequestMapping("/tarifario")
-@CrossOrigin(origins = "http://localhost:4200")
 @Api(tags = { "Controlador Tarifario" })
 public class ComandoControladorTarifario {
 
@@ -40,7 +38,7 @@ public class ComandoControladorTarifario {
 	public ComandoRespuesta<Long> crearTarifa(@RequestBody ComandoTarifario comandoTarifario) {
 		return manejadorCrear.ejecutar(comandoTarifario);
 	}
-	
+
 	@PutMapping(value = "/{id}")
 	@ApiOperation("Actualizar tarifa")
 	public void actualizarTarifa(@PathVariable Long id, @RequestBody ComandoTarifario comandoTarifario) {
@@ -53,7 +51,5 @@ public class ComandoControladorTarifario {
 	public void eliminarTarifa(@PathVariable Long id) {
 		this.manejadorEliminar.ejecutar(id);
 	}
-	
-	
 
 }

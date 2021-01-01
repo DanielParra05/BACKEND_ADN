@@ -7,4 +7,8 @@ public class ExcepcionSinDatos extends RuntimeException {
     public ExcepcionSinDatos(String message) {
         super(message);
     }
+    
+    public ExcepcionSinDatos(String message, Throwable t) {
+    	 super(message, t);
+    }
 }
