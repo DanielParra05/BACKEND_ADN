@@ -13,6 +13,7 @@ import com.ceiba.tarifario.servicio.testdatabuilder.ComandoTarifaTestDataBuilder
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ContextConfiguration;
@@ -23,6 +24,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes= ApplicationMock.class)
 @WebMvcTest(ComandoControladorTarifario.class)
+@AutoConfigureMockMvc(addFilters = false)
 public class ComandoControladorTarifarioTest {
 
     @Autowired
