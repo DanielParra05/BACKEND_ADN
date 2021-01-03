@@ -31,8 +31,12 @@ allprojects {
 	project.ext.actuator=["org.springframework.boot:spring-boot-starter-actuator:2.1.6.RELEASE"]
 	
 	project.ext.apachehttpcomponents = ["org.apache.httpcomponents:fluent-hc:4.5.13"]
-	project.ext.javaxws = ["javax.xml.ws:jaxws-api:2.2.6"]	
-	project.ext.javaxbind= ["javax.xml.bind:jaxb-api:2.1"]
-	project.ext.jaxwsrt = ["com.sun.xml.ws:jaxws-rt:2.1.4"]
+	project.ext.oAuth2 = ["org.springframework.security.oauth:spring-security-oauth2:2.3.4.RELEASE"]
+	project.ext.springJwt = ["org.springframework.security:spring-security-jwt:1.0.9.RELEASE"]
+	
+    project.ext.jakb= ["jakarta.xml.bind:jakarta.xml.bind-api:2.3.3"]
+    project.ext.jakbimpl= ["com.sun.xml.bind:jaxb-impl:2.3.3"]
+    
+	
 
 }

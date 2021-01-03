@@ -23,9 +23,11 @@ dependencies {
 	compile project.ext.actuator
 	
 	compile project.ext.apachehttpcomponents
-	compile project.ext.javaxws
-	compile project.ext.javaxbind
-	compile project.ext.jaxwsrt
+	compile project.ext.springJwt
+	compile project.ext.oAuth2
+	
+    compile project.ext.jakb
+    compile project.ext.jakbimpl
 	
 	implementation project(':comun:comun-dominio')
 }
