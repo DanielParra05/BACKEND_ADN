@@ -1,0 +1,1 @@
+select username, password from user
