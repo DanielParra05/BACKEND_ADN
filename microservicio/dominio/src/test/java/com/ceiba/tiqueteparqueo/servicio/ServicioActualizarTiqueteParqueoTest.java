@@ -64,7 +64,7 @@ public class ServicioActualizarTiqueteParqueoTest {
 		// Arrange
 		TiqueteParqueo tiqueteParqueo = new TiqueteParqueoTestDataBuilder()
 				.conFechaIngreso(LocalDateTime.of(2020, Month.JULY, 21, 18, 20))
-				.conFechaSalida(LocalDateTime.of(2020, Month.JULY, 21, 23, 30)).build();
+				.conFechaSalida(LocalDateTime.of(2020, Month.JULY, 21, 23, 30)).conId(1L).build();
 		ApiValidadorFechaFestivo validadorFechaFestivo = Mockito.mock(ApiValidadorFechaFestivo.class);
 		RepositorioTiqueteParqueo repositorioTiqueteParqueo = Mockito.mock(RepositorioTiqueteParqueo.class);
 		DaoTarifario daoTarifario = Mockito.mock(DaoTarifario.class);
@@ -87,7 +87,7 @@ public class ServicioActualizarTiqueteParqueoTest {
 		// Arrange
 		TiqueteParqueo tiqueteParqueo = new TiqueteParqueoTestDataBuilder()
 				.conFechaIngreso(LocalDateTime.of(2020, Month.JULY, 20, 12, 0))
-				.conFechaSalida(LocalDateTime.of(2020, Month.JULY, 20, 16, 20)).build();
+				.conFechaSalida(LocalDateTime.of(2020, Month.JULY, 20, 16, 20)).conId(1L).build();
 		ApiValidadorFechaFestivo validadorFechaFestivo = Mockito.mock(ApiValidadorFechaFestivo.class);
 		RepositorioTiqueteParqueo repositorioTiqueteParqueo = Mockito.mock(RepositorioTiqueteParqueo.class);
 		DaoTarifario daoTarifario = Mockito.mock(DaoTarifario.class);
@@ -110,7 +110,7 @@ public class ServicioActualizarTiqueteParqueoTest {
 		// Arrange
 		TiqueteParqueo tiqueteParqueo = new TiqueteParqueoTestDataBuilder()
 				.conFechaIngreso(LocalDateTime.of(2020, Month.JULY, 19, 12, 0))
-				.conFechaSalida(LocalDateTime.of(2020, Month.JULY, 19, 15, 0)).build();
+				.conFechaSalida(LocalDateTime.of(2020, Month.JULY, 19, 15, 0)).conId(1L).build();
 		ApiValidadorFechaFestivo validadorFechaFestivo = Mockito.mock(ApiValidadorFechaFestivo.class);
 		RepositorioTiqueteParqueo repositorioTiqueteParqueo = Mockito.mock(RepositorioTiqueteParqueo.class);
 		DaoTarifario daoTarifario = Mockito.mock(DaoTarifario.class);
@@ -133,7 +133,7 @@ public class ServicioActualizarTiqueteParqueoTest {
 		// Arrange
 		TiqueteParqueo tiqueteParqueo = new TiqueteParqueoTestDataBuilder()
 				.conFechaIngreso(LocalDateTime.of(2020, Month.JULY, 24, 12, 0))
-				.conFechaSalida(LocalDateTime.of(2020, Month.JULY, 24, 15, 0)).build();
+				.conFechaSalida(LocalDateTime.of(2020, Month.JULY, 24, 15, 0)).conId(1L).build();
 		ApiValidadorFechaFestivo validadorFechaFestivo = Mockito.mock(ApiValidadorFechaFestivo.class);
 		RepositorioTiqueteParqueo repositorioTiqueteParqueo = Mockito.mock(RepositorioTiqueteParqueo.class);
 		DaoTarifario daoTarifario = Mockito.mock(DaoTarifario.class);
@@ -156,7 +156,7 @@ public class ServicioActualizarTiqueteParqueoTest {
 		// Arrange
 		TiqueteParqueo tiqueteParqueo = new TiqueteParqueoTestDataBuilder()
 				.conFechaIngreso(LocalDateTime.of(2020, Month.JULY, 24, 12, 0))
-				.conFechaSalida(LocalDateTime.of(2020, Month.JULY, 24, 15, 0)).build();
+				.conFechaSalida(LocalDateTime.of(2020, Month.JULY, 24, 15, 0)).conId(1L).build();
 		ApiValidadorFechaFestivo validadorFechaFestivo = Mockito.mock(ApiValidadorFechaFestivo.class);
 		RepositorioTiqueteParqueo repositorioTiqueteParqueo = Mockito.mock(RepositorioTiqueteParqueo.class);
 		DaoTarifario daoTarifario = Mockito.mock(DaoTarifario.class);

@@ -2,12 +2,12 @@ package com.ceiba.tiqueteparqueo.modelo.entidad;
 
 import lombok.Getter;
 
-
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 
 import com.ceiba.tiqueteparqueo.modelo.TipoVehiculo;
 
+import static com.ceiba.dominio.ValidadorArgumento.validarFechaHora;
 import static com.ceiba.dominio.ValidadorArgumento.validarObligatorio;
 import static com.ceiba.dominio.ValidadorArgumento.validarValido;
 
@@ -16,7 +16,8 @@ public class TiqueteParqueo {
 
 	private static final String FECHA_INGRESO_VACIA = "Se debe indicar la fecha de ingreso";
 	private static final String DEBE_INGRESAR_VEHICULO_VALIDO = "Debe seleccionar un vehiculo valido";
-	private static final String SE_DEBE_INGRESAR_LA_PLACA = "Se debe ingresar la placac del vehiculo";
+	private static final String SE_DEBE_INGRESAR_LA_PLACA = "Se debe ingresar la placa del vehiculo";
+	private static final String FECHA_INGRESO_INVALIDA = "La fecha y hora de ingreso debe ser la actual.";
 
 	private Long id;
 	private String placaVehiculo;
@@ -30,6 +31,9 @@ public class TiqueteParqueo {
 		validarObligatorio(placaVehiculo, SE_DEBE_INGRESAR_LA_PLACA);
 		validarObligatorio(fechaIngreso, FECHA_INGRESO_VACIA);
 		validarValido(tipoVehiculo, TipoVehiculo.values(), DEBE_INGRESAR_VEHICULO_VALIDO);
+		if (id == null) {
+			validarFechaHora(fechaIngreso, FECHA_INGRESO_INVALIDA);
+		}
 
 		this.id = id;
 		this.tipoVehiculo = tipoVehiculo;
@@ -51,9 +55,10 @@ public class TiqueteParqueo {
 
 		this.valorAPagar = hours * precioHora;
 	}
-	
+
 	/**
 	 * Adiciona un valor fijo al valor a pagar del tiquete
+	 * 
 	 * @param adicion
 	 */
 	public void aplicarAdicionAlPago(double adicion) {
@@ -62,14 +67,16 @@ public class TiqueteParqueo {
 
 	/**
 	 * Adiciona un porcentaje al valor a pagar del tiquete
+	 * 
 	 * @param porcentajeDescuento
 	 */
 	public void aplicarDescuentoPorcentualAlPago(double porcentajeDescuento) {
 		this.valorAPagar = (this.valorAPagar - (this.valorAPagar * porcentajeDescuento));
 	}
-	
+
 	/**
 	 * Descuenta un porcentaje al valor a pagar del tiquete
+	 * 
 	 * @param porcentajeAdicion
 	 */
 	public void aplicarAdicionPorcentualAlPago(double porcentajeAdicion) {
