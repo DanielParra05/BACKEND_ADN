@@ -28,7 +28,7 @@ public class UsuarioService implements UserDetailsService {
 
 	@Override
 	@Transactional
-	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+	public UserDetails loadUserByUsername(String username) {
 		String pass = daoUser.listar().get(username);		
 		if (pass == null) {
 			throw new UsernameNotFoundException(USER_NOT_FOUND);
