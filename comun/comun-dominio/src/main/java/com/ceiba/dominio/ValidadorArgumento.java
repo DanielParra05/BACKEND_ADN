@@ -1,6 +1,7 @@
 package com.ceiba.dominio;
 
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -97,10 +98,9 @@ public class ValidadorArgumento {
 	}
 
 	public static void validarFechaHora(LocalDateTime fechaHoraAEvaluar, String mensaje) {
-		LocalDateTime fechaHoraActual = LocalDateTime.now();
-
-		if (fechaHoraAEvaluar != null && (fechaHoraAEvaluar.isBefore(fechaHoraActual.minusMinutes(1))
-				|| fechaHoraAEvaluar.isAfter(fechaHoraActual.plusMinutes(1)))) {
+		LocalDateTime fechaHoraActual = LocalDateTime.now(ZoneId.of("America/Bogota"));
+		if (fechaHoraAEvaluar != null && (fechaHoraAEvaluar.isBefore(fechaHoraActual.minusMinutes(5))
+				|| fechaHoraAEvaluar.isAfter(fechaHoraActual.plusMinutes(5)))) {
 			throw new ExcepcionValorInvalido(mensaje);
 		}
 	}
