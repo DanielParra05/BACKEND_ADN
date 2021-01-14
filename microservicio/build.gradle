@@ -1,3 +1,6 @@
+ext {
+ 	isK8s = project.hasProperty('k8s')
+}
 allprojects {
     repositories {
         mavenCentral() 
@@ -39,7 +42,7 @@ allprojects {
 	project.ext.flywaytest = ["org.flywaydb.flyway-test-extensions:flyway-spring-test:5.2.1"]
 
 	project.ext.h2 = ["com.h2database:h2:1.4.194"]
-
+	project.ext.kubernetes=["org.springframework.cloud:spring-cloud-starter-kubernetes-config:1.1.7.RELEASE"]
 	
 }
 
@@ -77,6 +80,9 @@ dependencies {
 	implementation project.ext.flyway
 
 	implementation project(':infraestructura')	
+	if (isK8s) {
+       compile project.ext.kubernetes
+    }
 }
 
 bootJar {

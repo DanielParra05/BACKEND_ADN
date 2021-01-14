@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: adn-parking-back
+  cloud:
+    kubernetes:
+      reload: 
+        enabled: true
+      config:
+        enabled: true
+        sources: 
+         - name: adn-parking-back
+           namespace: prueba-concepto
+         - name: dblocation
+           namespace: prueba-concepto

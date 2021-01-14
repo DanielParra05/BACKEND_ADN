@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: adn-parking-back
+  namespace: prueba-concepto
+data:
+  application.yml: |-
+    spring:
+      datasource:
+        jdbcUrl: jdbc:mysql://${db.host}:${db.port}/${DB_DATABASE}?useSSL=true&requireSSL=false&serverTimezone=UTC
+        username: ${DB_USER}
+        password: ${DB_PASSWORD}

@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: dblocation
+  namespace: prueba-concepto
+data:
+  application.yml: |-
+    db:
+      host: mysql-server-adn.mysql.database.azure.com
+      port: 3306

@@ -1,0 +1,13 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: rbac-prueba
+  namespace: prueba-concepto
+subjects:
+  - kind: ServiceAccount
+    name: default
+    namespace: prueba-concepto
+roleRef:
+  kind: ClusterRole
+  name: cluster-admin
+  apiGroup: rbac.authorization.k8s.io
